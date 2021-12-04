@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+#from django.conf import settings
 
 import blog.views
 
 
+#print(f'time zone: {settings.TIME_ZONE}')
 urlpatterns = [
     path('', blog.views.index),
     path('admin/', admin.site.urls),
