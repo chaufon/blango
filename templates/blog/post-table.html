@@ -8,6 +8,12 @@
         <div id="react_root"></div>
     </div>
 </div>
+<script>
+  console.log('Before setting postListUrl')
+  const postListUrl = '{{ post_list_url|escapejs }}'
+  
+  console.log('postListUrl in template: ' + postListUrl)
+</script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
