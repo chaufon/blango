@@ -1,12 +1,30 @@
 {% extends "base.html" %}
 {% load blog_extras cache %}
 {% block content %}
+{% if post.hero_image %}
+<img src="{{ post.hero_image.thumbnail.100x100.url }}"/>
+{% endif %}
 <h2>{{ post.title }}</h2>
+
+
+
 {% row %}
     <div class="col">
         {% include "blog/post-byline.html" %}
     </div>
 {% endrow %}
+
+{% row %}
+{% if post.hero_image %}
+    {% row %}
+        {% col %}
+            <img class="img-fluid" src="{{ post.hero_image.url }}">
+        {% endcol %}
+    {% endrow %}
+{% endif %}
+
+{% endrow %}
+
 {% row %}
     {% col %}
         {{ post.content|safe }}
